@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Home </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/"> UangKu </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/account"> Profile </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/analysis">Analysis</a>
+              </li>
+              <li class="nav-item" <%=cekAdmin !=='admin'?'hidden':null%>>
+                <a class="nav-link" href="/listProfile">list profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+<br>
+<section id="hero" class="hero carousel  carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="container">
+        <div class="row justify-content-center gy-6">
+
+          <div class="col-lg-5 col-md-8">
+            <img src="https://cdn.discordapp.com/attachments/288296133804032001/1177283241179369492/image.png" alt="" class="img-fluid img">
+          </div>
+
+          <div class="col-lg-9 text-center" style="margin-top: 20px;">
+            <h2>Welcome to UangKu</h2>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="card" style="width: 18rem;margin: 0 auto;
+float: none;
+margin-bottom: 10px;">
+  <div class="card-body">
+    <h6 class="card-subtitle mb-2 text-body-secondary">Expense Balance: - <%= formatRupiah(expense) %> </h6>
+  </div>
+  <div class="card-body">
+      <h6 class="card-subtitle mb-2 text-body-secondary">Income Balance: <%= formatRupiah(income) %> </h6>
+  </div>
+  <div class="card-body">
+      <h6 class="card-subtitle mb-2 text-body-secondary">Total Balance: <%= formatRupiah(dataTransaction.balance) %> </h6>
+  </div>
+  <button><a href="/transaction">+</a></button>
+</div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Type</th>
+        <th scope="col">Description</th>
+        <th scope="col">Category</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <%dataCategory.forEach(category=>{%>
+        <%category.dataValues.Category_Id?? []%>
+        <%category.dataValues.Category_Id.forEach(transaction =>{ %>
+
+          <tr>
+            <th scope="row"><%=time(transaction.date)%></th>
+            <td><%=transaction.type%></td>
+            <td><%=transaction.description%></td>
+            <td><%=category.name%></td>
+          </tr>
+          <% })%>
+        <%})%>
+    </tbody>
+  </table>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>

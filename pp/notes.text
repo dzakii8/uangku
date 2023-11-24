@@ -1,0 +1,6 @@
+npx sequelize-cli model:generate --name User --attributes username:string,password:string,role:string
+npx sequelize-cli model:generate --name Category --attributes name:string
+npx sequelize-cli model:generate --name Transaction --attributes nominal:integer,description:string,type:string,date:date,CategoryId:integer,UserId:integer
+npx sequelize-cli model:generate --name Profile --attributes name:string,phone:string,goals:string,UserId:integer
+
+

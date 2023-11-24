@@ -1,0 +1,18 @@
+[
+    {
+        "nominal" : "10000",
+        "description" : "lunch",
+        "date" : "2023-10-10",
+        "CategoryId" : 1,
+        "type" : "expanse",
+        "UserId" : 1
+    },
+    {
+        "nominal" : "300000",
+        "description" : "bonus",
+        "date" : "2023-11-09",
+        "CategoryId" : 2,
+        "type" : "income",
+        "UserId" : 2
+    }
+]

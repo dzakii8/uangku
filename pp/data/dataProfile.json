@@ -1,0 +1,14 @@
+[
+    {
+        "name" : "ical",
+        "phone" : "081231313",
+        "goals" : "beli motor",
+        "UserId" : 1
+    },
+    {
+        "name" : "reze",
+        "phone" : "0809999999",
+        "goals" : "beli mobil",
+        "UserId" : 2
+    }
+]

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Transaction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    
+    <div class="card" style="width: 25rem;">
+        <form action="/transaction" method="post">
+            <div class="input-group mb-3">
+                <input type="radio" class="btn-check" id="btn-check" autocomplete="off" value="expense" name="type">
+                <label class="btn btn-primary" for="btn-check">EXPENSE</label>
+                <input type="radio" class="btn-check" id="btn-check-2" checked autocomplete="off" value="income" name="type">
+                <label class="btn btn-primary" for="btn-check-2">INCOME</label>
+            </div>
+
+            
+
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                <select class="form-select" id="inputGroupSelect01" name="CategoryId">
+                  <option selected value="">Select Category</option>
+                  <option value="1">Food and Beverage</option>
+                  <option value="2">Salary</option>
+                  <option value="3">Bills</option>
+                  <option value="4">Trasportation</option>
+                  <option value="5">Gift</option>
+                </select>
+            </div>
+            <div>
+                <input type="textarea" placeholder="Add notes" name="description">
+            </div>
+            <div>
+                <label for="">nominal</label><br>
+                <input type="number" placeholder="0" name="nominal">
+            </div>
+            <div>
+                <label for="">Time</label><br>
+                <input type="datetime-local" value="<%=times%>" name="date">
+            </div><br>
+            <button type="submit" class="btn btn-primary">Save</button>
+            
+        </form>
+    </div>
+</div>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
